@@ -36,8 +36,7 @@
     10. Kullanıcı Geri Bildirimi: (Şevval Tuncay)
 
 ## Gereksinim Dağılımları:
-
-    [Şevval Tuncay'ın Gereksinimleri](https://github.com/sevvaltuncay/cloudgazer-weatherapp?tab=readme-ov-file#%C5%9Fevval-tuncay%C4%B1n-gereksinimleri)
+[Şevval Tuncay'ın Gereksinimleri](https://github.com/sevvaltuncay/cloudgazer-weatherapp?tab=readme-ov-file#%C5%9Fevval-tuncay%C4%B1n-gereksinimleri)
 
 ## Şevval Tuncay'ın Gereksinimleri:
 
