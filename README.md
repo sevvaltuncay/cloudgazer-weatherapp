@@ -10,15 +10,15 @@
 
 **Proje Ekibi:** Şevval Tuncay
 
-    1. Proje Planı
-    2. Gereksinim Analizi
-    3. Durum Diyagramı
-    4. Durum Senaryoları
-    5. Veritabanı Diyagramı
-    6. Front-End
-    7. Back-End
-    8. Test
-    9. Geliştirici ve Kullanıcı Dökümantasyonları
+1. Proje Planı
+2. Gereksinim Analizi
+3. Durum Diyagramı
+4. Durum Senaryoları
+5. Veritabanı Diyagramı
+6. Front-End
+7. Back-End
+8. Test
+9. Geliştirici ve Kullanıcı Dökümantasyonları
 
 ## Gereksinim Analizi:
 
