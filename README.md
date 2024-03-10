@@ -10,7 +10,7 @@
 
 **Proje Ekibi:** Şevval Tuncay
 
-1. Proje Planı
+1. [Proje Planı](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/main/ProjePlan%C4%B1.md)
 2. [Gereksinim Analizi](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/main/Gereksinimler.md)
 3. Durum Diyagramı
 4. Durum Senaryoları
