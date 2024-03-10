@@ -1,3 +1,3 @@
 # Proje Planı
 
-![](./assets/cgplan.png)
+![](./img/cgplan.png)
