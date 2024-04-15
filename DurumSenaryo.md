@@ -1,3 +1,3 @@
 # Durum Senaryoları
 
-![Şevval Tuncay Durum Senaryoları](./sevvaltuncaysenaryo.pdf)
+![Şevval Tuncay Durum Senaryoları](./img/sevvaltuncaysenaryo.pdf)
