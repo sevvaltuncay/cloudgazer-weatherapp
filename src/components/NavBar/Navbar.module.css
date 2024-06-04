@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("./pexels-pixabay-209831.jpg");
+  background-size: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  border-radius: 1rem;
+  box-sizing: border-box;
+  display: grid;
+  background: rgba(204, 204, 204, 0.6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar_container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  gap: 30rem;
+}
+.navbar_container_left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.logo {
+  cursor: pointer;
+}
+.navbar_container_right {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.8rem;
+  margin-right: 2%;
+}
+.navbar_container_right_weather {
+  position: relative;
+  cursor: pointer;
+}
+.navbar_container_right_weather_link {
+  text-decoration: none;
+  font-display: flex;
+  font-size: 1rem;
+}
+.navbar_container_right_weather_link:visited {
+  color: inherit;
+}
+.navbar_container_right_weather_link:hover {
+  color: black;
+  background-color: white;
+  background-size: 1.5rem;
+  padding: 1rem;
+  width: 6rem;
+  transition: all 300ms ease;
+  border-radius: 1rem;
+  text-shadow: white;
+  text-decoration: none;
+}
+.navbar_container_right_logout button {
+  padding: 6px 6px;
+  background-color: rgba(204, 204, 204, 0.4);
+  display: flex;
+  font-size: 0.8rem;
+  border-radius: 2rem;
+}
+.navbar_container_right_uyeOl {
+  position: relative;
+  cursor: pointer;
+}
+.navbar_container_right_uyeOl_box {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  font-size: 2rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  background: rgba(204, 204, 204, 0.6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

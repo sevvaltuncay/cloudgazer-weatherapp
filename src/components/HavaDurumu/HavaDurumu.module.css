@@ -1,0 +1,83 @@
+.havaDurumu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  min-height: calc(100vh - 100px);
+}
+
+.havaDurumu_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.havaDurumu_box_input {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 3rem;
+}
+
+.havaDurumu_box_input input {
+  width: calc(100% - 100px);
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.havaDurumu_box_input input::placeholder {
+  color: black;
+}
+
+.submitbutton {
+  margin-left: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.havaDurumu_box_info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Satır ve sütun düzeni */
+  gap: 50px;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+}
+.havaDurumu_box_info_open {
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 2rem;
+  padding: 20px;
+  position: relative;
+}
+.button_all {
+  padding: 5px 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+.date {
+  margin-right: 70px;
+}
+.likebutton,
+.deletebutton,
+.updatebutton {
+  border: none;
+  background: transparent;
+}
+.likebutton:hover,
+.deletebutton:hover,
+.updatebutton:hover {
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.2rem 0.2rem;
+  transform: scale(1.1);
+}
