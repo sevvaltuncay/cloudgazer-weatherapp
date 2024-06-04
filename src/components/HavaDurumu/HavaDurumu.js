@@ -16,11 +16,14 @@ const HavaDurumu = () => {
 
   const fetchWeathers = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/weather", {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://cloudgazer-weatherapp.vercel.app/api/weather",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       const data = await response.json();
 
       if (response.ok) {
@@ -46,14 +49,17 @@ const HavaDurumu = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:4000/api/weather", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: JSON.stringify({ city }),
-      });
+      const response = await fetch(
+        "https://cloudgazer-weatherapp.vercel.app/api/weather",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+          body: JSON.stringify({ city }),
+        }
+      );
 
       const data = await response.json();
 
@@ -73,12 +79,15 @@ const HavaDurumu = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:4000/api/weather/${id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
 
       if (response.ok) {
         dispatch({ type: "DELETE_WEATHER", payload: { _id: id } });
@@ -97,7 +106,7 @@ const HavaDurumu = () => {
     }
     try {
       const response = await fetch(
-        `http://localhost:4000/api/weather/${id}/like`,
+        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}/like`,
         {
           method: "PUT",
           headers: {
@@ -126,14 +135,17 @@ const HavaDurumu = () => {
       const currentTime = currentDate.toLocaleString("tr-TR", {
         timeZone: "Europe/Istanbul",
       });
-      const response = await fetch(`http://localhost:4000/api/weather/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: JSON.stringify({ city: updateCity, updatedAt: currentTime }),
-      });
+      const response = await fetch(
+        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+          body: JSON.stringify({ city: updateCity, updatedAt: currentTime }),
+        }
+      );
 
       const data = await response.json();
 

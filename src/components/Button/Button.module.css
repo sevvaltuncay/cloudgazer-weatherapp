@@ -1,7 +1,0 @@
-.button {
-  transition: 0.2 all ease-in;
-  background-color: white;
-}
-.button:hover {
-  cursor: pointer;
-}
