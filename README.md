@@ -15,7 +15,7 @@
 3. [Durum Diyagramı](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/main/DurumDiyagram%C4%B1.md)
 4. [Durum Senaryoları](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/main/DurumSenaryo.md)
 5. [Veritabanı Diyagramı](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/main/VeriTaban%C4%B1.md)
-6. Front-End
-7. Back-End
-8. Test
-9. Geliştirici ve Kullanıcı Dökümantasyonları
+6. [Front-End](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/master/Front-End.md)
+7. [Back-End](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/master/Back-End.md)
+8. [Test](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/master/Test.md)
+9. [Geliştirici ve Kullanıcı Dökümantasyonları](https://github.com/sevvaltuncay/cloudgazer-weatherapp/blob/master/Kullan%C4%B1c%C4%B1Geli%C5%9FtiriciD%C3%B6k%C3%BCmantasyonu.md)

@@ -8,24 +8,20 @@ const weatherRoute = require("./routes/weatherRoute");
 
 const userRoutes = require("./routes/user");
 
-app.use(
-  cors({
-    origin: ["https://cloudgazer-weatherapp.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PUT"],
-    credentials: true,
-  })
-);
+app.use(cors());
+
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log("connected to db & listening on port", process.env.PORT);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
 app.use("/api/user", userRoutes);
 app.use("/api/weather", weatherRoute);
+
+mongoose.connect(process.env.MONGO_URI);
+
+app.listen(4000, () => console.log("Server ready on port 4000."));
+
+app.get("/", (req, res) => res.status(200).json({ message: "Başarılı" }));
