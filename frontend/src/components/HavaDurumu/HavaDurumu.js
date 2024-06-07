@@ -17,7 +17,7 @@ const HavaDurumu = () => {
   const fetchWeathers = async () => {
     try {
       const response = await fetch(
-        "https://cloudgazer-weatherapp.vercel.app/api/weather",
+        "https://cloudgazer-weatherapp.onrender.com/api/weather",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -50,7 +50,7 @@ const HavaDurumu = () => {
     }
     try {
       const response = await fetch(
-        "https://cloudgazer-weatherapp.vercel.app/api/weather",
+        "https://cloudgazer-weatherapp.onrender.com/api/weather",
         {
           method: "POST",
           headers: {
@@ -80,7 +80,7 @@ const HavaDurumu = () => {
     }
     try {
       const response = await fetch(
-        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}`,
+        `https://cloudgazer-weatherapp.onrender.com/api/weather/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -106,7 +106,7 @@ const HavaDurumu = () => {
     }
     try {
       const response = await fetch(
-        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}/like`,
+        `https://cloudgazer-weatherapp.onrender.com/api/weather/${id}/like`,
         {
           method: "PUT",
           headers: {
@@ -136,7 +136,7 @@ const HavaDurumu = () => {
         timeZone: "Europe/Istanbul",
       });
       const response = await fetch(
-        `https://cloudgazer-weatherapp.vercel.app/api/weather/${id}`,
+        `https://cloudgazer-weatherapp.onrender.com/api/weather/${id}`,
         {
           method: "PUT",
           headers: {

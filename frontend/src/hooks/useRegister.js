@@ -12,7 +12,7 @@ export const useRegister = () => {
     setError(null);
 
     const response = await fetch(
-      "https://cloudgazer-weatherapp.vercel.app/api/user/register",
+      "https://cloudgazer-weatherapp.onrender.com/api/user/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
