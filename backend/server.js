@@ -22,6 +22,6 @@ app.use("/api/weather", weatherRoute);
 
 mongoose.connect(process.env.MONGO_URI);
 
-app.listen(4000, () => console.log("Server ready on port 4000."));
+app.listen(4001, () => console.log("Server ready on port 4000."));
 
 app.get("/", (req, res) => res.status(200).json({ message: "Başarılı" }));
