@@ -5,7 +5,7 @@ require("dotenv").config();
 const cors = require("cors");
 const app = express();
 const weatherRoute = require("./routes/weatherRoute");
-
+const feedbackRoute = require("./routes/feedbackRoute");
 const userRoutes = require("./routes/user");
 
 app.use(cors());
@@ -19,9 +19,10 @@ app.use((req, res, next) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/weather", weatherRoute);
+app.use("/api", feedbackRoute);
 
 mongoose.connect(process.env.MONGO_URI);
 
-app.listen(4001, () => console.log("Server ready on port 4001."));
+app.listen(4000, () => console.log("Server ready on port 4000."));
 
 app.get("/", (req, res) => res.status(200).json({ message: "Başarılı" }));

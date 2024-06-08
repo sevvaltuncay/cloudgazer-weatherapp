@@ -1,0 +1,111 @@
+.feedback_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.feedback_box {
+  box-sizing: border-box;
+  color: #01131c;
+  width: 420px;
+}
+.feedback_box h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.feedback_name {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  margin: 30px 0;
+  gap: 30px;
+}
+.feedback_name input {
+  height: 70%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: #081920;
+  padding: 20px 30px 20px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+}
+.feedback_name input::placeholder {
+  color: rgb(170, 162, 162);
+  text-align: justify;
+}
+.feedback_phone {
+  position: relative;
+  width: 100;
+  height: 50px;
+  margin: 20px 0;
+}
+.feedback_phone input {
+  width: 70%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: #081920;
+  padding: 20px 30px 20px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+}
+.feedback_phone input::placeholder {
+  color: rgb(170, 162, 162);
+  text-align: justify;
+}
+.feedback_email {
+  position: relative;
+  width: 100;
+  height: 50px;
+  margin: 30px 0;
+}
+.feedback_email input {
+  width: 70%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: #081920;
+  padding: 20px 30px 20px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+}
+.feedback_email input::placeholder {
+  color: rgb(170, 162, 162);
+  text-align: justify;
+}
+.feedback_desc {
+  position: relative;
+  width: 100;
+  height: 120px;
+  margin: 30px 0;
+}
+.feedback_desc textarea {
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: #081920;
+  padding: 20px 30px 20px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.feedback_desc textarea::placeholder {
+  text-align: justify;
+}
+.feedback_button {
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px 10px;
+  text-align: center;
+  justify-content: space-between;
+}
+.feedback_button button {
+  background: transparent;
+  border: none;
+  outline: none;
+}

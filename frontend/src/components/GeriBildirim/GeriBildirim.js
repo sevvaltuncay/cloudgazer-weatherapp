@@ -1,151 +1,114 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Style from "./GeriBildirim.module.css";
 
-function Feedback() {
-  const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    message: "",
-    phone: "",
-    uploadedFiles: [],
-    buttonText: "Submit",
-    uploadPhotosButtonText: "Upload files",
-  });
-  const {
-    name,
-    email,
-    message,
-    phone,
-    uploadedFiles,
-    buttonText,
-    uploadPhotosButtonText,
-  } = info;
-  const { REACT_APP_CLOUD_NAME, REACT_APP_UPLOAD_SECRET } = process.env;
+const Feedback = () => {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+  const [buttonText, setButtonText] = useState("Submit");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setInfo({ ...info, buttonText: "...sending" });
-
-    axios({
+    setButtonText("...sending");
+    const response = await fetch("http://localhost:4000/api/feedback", {
       method: "POST",
-      url: "http://localhost:8080/api/feedback",
-      data: { name, email, message, phone },
-    })
-      .then((res) => {
-        if (res.data.success)
-          toast("🦄 Thanks for your feedback!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-        setInfo({
-          ...info,
-          name: "",
-          phone: "",
-          email: "",
-          message: "",
-          buttonText: "Submited",
-          uploadPhotosButtonText: "Uploaded",
-        });
-      })
-      .catch((err) => {
-        if (err.response.data.error) toast.error("Failed, try again!");
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phoneNumber, email, description }),
+    });
+    const json = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem("feedback", JSON.stringify(json));
+      toast.success("🦄 Geri Bildirim için teşekkürler!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
-  };
+      setName("");
+      setPhoneNumber("");
+      setEmail("");
+      setDescription("");
+    }
+    if (!response.ok) {
+      toast.error("Beklenmeyen bir hata oluştu!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
 
-  const handleChange = (name) => (e) => {
-    setInfo({ ...info, [name]: e.target.value });
-  };
-
-  const uploadWidget = () => {
-    window.cloudinary.openUploadWidget(
-      {
-        cloud_name: REACT_APP_CLOUD_NAME,
-        upload_preset: REACT_APP_UPLOAD_SECRET,
-        tags: ["images"],
-      },
-      function (error, result) {
-        if (error) console.log(error);
-        setInfo({ ...info, uploadPhotosButtonText: "Uploaded" });
-      }
-    );
+    setButtonText("Submit");
   };
 
   return (
-    <div className="form">
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-      />
-      <ToastContainer />
-      {/* upload files */}
-      <Button onClick={uploadWidget} className="button">
-        {uploadPhotosButtonText}
-      </Button>
-      <Form onSubmit={handleSubmit}>
-        {/* Name */}
-        <Form.Group>
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            value={name}
-            onChange={handleChange("name")}
-            type="name"
-            placeholder="Enter your name"
-            required
-          />
-        </Form.Group>
-        {/* Phone */}
-        <Form.Group>
-          <Form.Label>Phone</Form.Label>
-          <Form.Control
-            value={phone}
-            onChange={handleChange("phone")}
-            type="phone"
-            placeholder="Enter your phone number"
-            required
-          />
-        </Form.Group>
-        {/* email */}
-        <Form.Group>
-          <Form.Label>Email Adress</Form.Label>
-          <Form.Control
-            value={email}
-            onChange={handleChange("email")}
-            type="email"
-            placeholder="Enter email"
-            required
-          />
-        </Form.Group>
-        {/* text area */}
-        <Form.Group>
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            onChange={handleChange("message")}
-            as="textarea"
-            value={message}
-            rows={3}
-            required
-          />
-        </Form.Group>
-
-        <Button type="submit">{buttonText}</Button>
-      </Form>
+    <div className={Style.feedback_form}>
+      <div className={Style.feedback_box}>
+        <h1>Geri Bildirim</h1>
+        <form onSubmit={handleSubmit}>
+          {/* Name */}
+          <div className={Style.feedback_name}>
+            <p>Ad</p>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          {/* Phone */}
+          <div className={Style.feedback_phone}>
+            <p>Telefon Numarası</p>
+            <input
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              type="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+          {/* email */}
+          <div className={Style.feedback_email}>
+            <p>Email Adresi</p>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          {/* text area */}
+          <div className={Style.feedback_desc}>
+            <p>Açıklama</p>
+            <textarea
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              value={description}
+              rows={6}
+              cols={50}
+              required
+            />
+          </div>
+          <div className={Style.feedback_button}>
+            <button type="submit">{buttonText}</button>
+          </div>
+          <ToastContainer />
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default Feedback;
