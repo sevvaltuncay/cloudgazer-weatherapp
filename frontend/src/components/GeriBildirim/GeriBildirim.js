@@ -13,11 +13,14 @@ const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("...sending");
-    const response = await fetch("http://localhost:4000/api/feedback", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phoneNumber, email, description }),
-    });
+    const response = await fetch(
+      "https://cloudgazer-weatherapp.onrender.com/api/feedback",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phoneNumber, email, description }),
+      }
+    );
     const json = await response.json();
 
     if (response.ok) {
