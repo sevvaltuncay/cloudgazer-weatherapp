@@ -16,7 +16,6 @@ const UyeOl = () => {
     e.preventDefault();
     await register({ name, lastname, email, password });
   };
-
   return (
     <div className={Style.uyeol}>
       <form className={Style.uyeol_box} onSubmit={handleSubmit}>
