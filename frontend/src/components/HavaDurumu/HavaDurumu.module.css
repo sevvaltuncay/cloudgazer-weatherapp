@@ -56,12 +56,14 @@
   padding: 20px;
   position: relative;
 }
+
 .button_all {
   padding: 5px 5px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   gap: 0.6rem;
+  margin-top: 10px;
 }
 .date {
   margin-right: 70px;
@@ -80,4 +82,11 @@
   transition: all 0.3s ease-in-out;
   padding: 0.2rem 0.2rem;
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .havaDurumu_box_info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

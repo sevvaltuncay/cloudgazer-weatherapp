@@ -1,16 +1,11 @@
 const User = require("../models/userModel");
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
 
-const createToken = (_id) => {
-  return jwt.sign({ _id: _id }, process.env.SECRET, { expiresIn: "60d" });
-};
+const jwt = require("jsonwebtoken");
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.login(email, password);
-
     const token = createToken(user._id);
     res.status(200).json({ token, email });
   } catch (error) {
@@ -24,7 +19,6 @@ const registerUser = async function (req, res) {
   try {
     const user = await User.register(name, lastname, email, password);
 
-    //token
     const token = createToken(user._id);
     res.status(200).json({ token, email });
   } catch (error) {

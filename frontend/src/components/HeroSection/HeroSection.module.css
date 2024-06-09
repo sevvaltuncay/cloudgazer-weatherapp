@@ -1,27 +1,32 @@
 .heroSection {
-  margin: 2rem auto;
+  margin: 3rem auto 2rem;
   width: 100%;
   position: relative;
   z-index: 10;
 }
+
 .heroSection_box {
   gap: 0.8rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .heroSection_box_left {
   padding-left: 3rem;
 }
+
 .heroSection_box_left h1 {
   font-size: 2.4rem;
   padding-top: 100px;
   display: grid;
   color: #0f303d;
 }
+
 .heroSection_box_left p {
   margin-bottom: 1.5rem;
   color: rgb(5, 21, 48);
 }
+
 .button {
   background-color: rgba(204, 204, 204, 0.4);
   padding: 15px 32px;
@@ -30,9 +35,11 @@
   font-size: 15px;
   border-radius: 2rem;
 }
+
 .button_icon {
   margin-right: 0.3rem;
 }
+
 .button a {
   text-decoration: none;
   color: rgb(235, 225, 225);
@@ -41,6 +48,7 @@
 .button a:hover {
   color: #0f303d;
 }
+
 .button:hover {
   background: rgba(204, 204, 204, 0.7);
   transition: all 0.2s ease-in;
@@ -54,6 +62,8 @@
 }
 
 .weatherMap iframe {
+  position: relative;
+  z-index: 0;
   width: 100%;
   max-width: 700px;
   height: 500px;
@@ -66,5 +76,38 @@
 }
 
 .weatherMap:hover iframe {
-  transform: scale(1.1); /* Slightly increase the size of the iframe on hover */
+  transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .heroSection_box {
+    grid-template-columns: 1fr;
+  }
+
+  .heroSection_box_left {
+    padding-left: 0.8em;
+    text-align: center;
+  }
+
+  .heroSection_box_left h1 {
+    font-size: 1.8rem;
+    padding-top: 50px;
+  }
+
+  .weatherMap {
+    padding-right: 0;
+    padding-top: 1rem;
+    justify-content: center;
+  }
+
+  .weatherMap iframe {
+    max-width: 90%;
+    height: 280px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }

@@ -38,7 +38,7 @@
   position: absolute;
   font-size: 16px;
   right: 20px;
-  transform: translateY(150%);
+  transform: translateY(100%);
 }
 .girisyap_box_sifre {
   position: relative;
@@ -64,7 +64,7 @@
   position: absolute;
   font-size: 16px;
   right: 20px;
-  transform: translateY(150%);
+  transform: translateY(100%);
 }
 .girisyap_box .girisyap_box_remember {
   display: flex;

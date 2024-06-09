@@ -50,8 +50,8 @@
 .uyeol_lastname_icon {
   position: absolute;
   top: 70%;
-  transform: translateY(-50%);
-  right: 10px;
+  transform: translateY(-80%);
+  right: 20px;
 }
 .uyeol_email,
 .uyeol_sifre {
@@ -84,8 +84,8 @@
 .uyeol_sifre_icon {
   position: absolute;
   top: 70%;
-  transform: translateY(-50%);
-  right: 10px;
+  transform: translateY(-100%);
+  right: 20px;
 }
 
 .uyeol_condition {

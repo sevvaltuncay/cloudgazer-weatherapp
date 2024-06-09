@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import UyeOlma from "../UyeOlma/uyeOlma";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavBar = () => {
   const { logout } = useLogout();
@@ -24,8 +25,7 @@ const NavBar = () => {
     setUyeOl((prevUyeOl) => !prevUyeOl);
   };
 
-  // kayan menü
-  const openSideBar = () => {
+  const toggleSideMenu = () => {
     setOpenSideMenu((prevOpenSideMenu) => !prevOpenSideMenu);
   };
 
@@ -43,11 +43,19 @@ const NavBar = () => {
             />
           </div>
         </div>
-        <div className={Style.navbar_container_right}>
+        <div className={Style.hamburger_menu} onClick={toggleSideMenu}>
+          {openSideMenu ? <FaTimes /> : <FaBars />}
+        </div>
+        <div
+          className={`${Style.navbar_container_right} ${
+            openSideMenu ? Style.active : ""
+          }`}
+        >
           <div className={Style.navbar_container_right_weather}>
             <Link
               to={"/weather-forecast"}
               className={Style.navbar_container_right_weather_link}
+              onClick={toggleSideMenu}
             >
               Hava Durumu
             </Link>
@@ -56,6 +64,7 @@ const NavBar = () => {
             <Link
               to={"/geri-bildirim"}
               className={Style.navbar_container_right_weather_link}
+              onClick={toggleSideMenu}
             >
               Geri Bildirim
             </Link>
@@ -69,7 +78,10 @@ const NavBar = () => {
           {!user && (
             <div className={Style.navbar_container_right_uyeOl}>
               <p
-                onClick={(e) => openMenu(e)}
+                onClick={(e) => {
+                  openMenu(e);
+                  toggleSideMenu();
+                }}
                 className={Style.navbar_container_right_weather_link}
               >
                 Üye Ol

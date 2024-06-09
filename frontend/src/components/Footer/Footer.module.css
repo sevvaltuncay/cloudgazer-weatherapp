@@ -102,3 +102,47 @@
   font-size: 12px;
   color: rgb(235, 225, 225);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer_box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer_left,
+  .footer_mid,
+  .footer_right {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer_left {
+    padding: 10px;
+  }
+
+  .footer_left img {
+    margin-bottom: 15px;
+  }
+
+  .footer_left_icons {
+    justify-content: center;
+  }
+
+  .footer_mid h1,
+  .footer_right h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer_right_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+  }
+
+  .footer_right_box input {
+    width: 70%;
+  }
+}

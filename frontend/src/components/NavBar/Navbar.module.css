@@ -1,3 +1,5 @@
+/* Navbar.module.css */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -18,6 +20,8 @@ html {
   display: grid;
   background: rgba(204, 204, 204, 0.6);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: relative;
 }
 .navbar_container {
   width: 90%;
@@ -26,6 +30,7 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 30rem;
+  position: relative;
 }
 .navbar_container_left {
   display: flex;
@@ -84,4 +89,53 @@ html {
   border-radius: 0.5rem;
   background: rgba(204, 204, 204, 0.6);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger_menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar_container {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .navbar_container_left {
+    justify-content: left;
+  }
+
+  .navbar_container_right {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    display: none;
+  }
+
+  .navbar_container_right_weather_link,
+  .navbar_container_right_logout button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar_container_right_uyeOl_box {
+    width: 200%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .hamburger_menu {
+    display: block;
+  }
+
+  .navbar_container_right.active {
+    display: flex;
+  }
 }

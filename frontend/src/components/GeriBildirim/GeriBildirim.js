@@ -8,11 +8,11 @@ const Feedback = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-  const [buttonText, setButtonText] = useState("Submit");
+  const [buttonText, setButtonText] = useState("Gönder");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setButtonText("...sending");
+    setButtonText("...gönderiliyor");
     const response = await fetch(
       "https://cloudgazer-weatherapp.onrender.com/api/feedback",
       {
@@ -51,7 +51,7 @@ const Feedback = () => {
       });
     }
 
-    setButtonText("Submit");
+    setButtonText("Gönder");
   };
 
   return (
@@ -66,7 +66,7 @@ const Feedback = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="name"
-              placeholder="Enter your name"
+              placeholder="Adınızı giriniz"
               required
             />
           </div>
@@ -77,7 +77,7 @@ const Feedback = () => {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               type="phone"
-              placeholder="Enter your phone number"
+              placeholder="Telefon numaranızı giriniz"
               required
             />
           </div>
@@ -88,7 +88,7 @@ const Feedback = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              placeholder="Enter email"
+              placeholder="Email adresinizi giriniz"
               required
             />
           </div>
