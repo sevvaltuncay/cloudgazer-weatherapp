@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Navigate için import
 import { useAuthContext } from "./useAuthContext";
 
 export const useRegister = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
+  const navigate = useNavigate(); // useNavigate hook'u kullanımı
 
   const register = async ({ name, lastname, email, password }) => {
     setIsLoading(true);
@@ -25,11 +27,8 @@ export const useRegister = () => {
       setError(json.error);
     }
     if (response.ok) {
-      localStorage.setItem("user", JSON.stringify(json));
-
-      dispatch({ type: "LOGIN", payload: json });
-
       setIsLoading(false);
+      navigate("/giris-yap");
     }
   };
 
