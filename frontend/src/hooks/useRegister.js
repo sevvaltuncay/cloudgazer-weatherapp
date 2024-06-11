@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Navigate için import
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./useAuthContext";
 
 export const useRegister = () => {

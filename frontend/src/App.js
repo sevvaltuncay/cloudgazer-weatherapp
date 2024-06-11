@@ -9,6 +9,7 @@ import GirisYap from "./components/GirisYap/GirisYap";
 import HeroSection from "./components/HeroSection/HeroSection";
 import ForgetPass from "./components/forgetPassword/ForgetPass";
 import { useAuthContext } from "./hooks/useAuthContext";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
 
 function App() {
   const { user } = useAuthContext();
@@ -32,6 +33,7 @@ function App() {
             element={!user ? <GirisYap /> : <Navigate to="/" />}
           />
           <Route path="/giris-yap/forget-password" element={<ForgetPass />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>
