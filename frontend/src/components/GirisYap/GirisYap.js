@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Style from "./GirisYap.module.css";
 import { FaLock } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
 
 const GirisYap = () => {
@@ -50,14 +51,16 @@ const GirisYap = () => {
               />
               Beni Hatırla
             </label>
-            <a href="/giris-yap/forget-password">Şifrenizi mi unuttunuz?</a>
+            <Link to={"/giris-yap/forget-password"}>
+              Şifrenizi mi unuttunuz?
+            </Link>
           </div>
           <button disabled={isLoading} type="submit">
             Giriş Yap
           </button>
           <div className={Style.girisyap_box_register}>
             <p>
-              Hesabınız yok mu? <a href="/uye-ol">Şimdi üye olun.</a>
+              Hesabınız yok mu? <Link to={"/uye-ol"}>Şimdi üye olun.</Link>
             </p>
           </div>
         </div>
