@@ -1,0 +1,51 @@
+.forget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.forget_box h2 {
+  text-align: center;
+  font-size: 50px;
+}
+.forget_box input {
+  position: relative;
+  width: 90%;
+  height: 40px;
+  margin: 20px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+  padding: 20px 45px 20px 20px;
+  text-decoration: #081920;
+}
+.forget_box input::placeholder {
+  color: rgb(170, 162, 162);
+  text-align: justify;
+}
+.forget_box_sifre {
+  display: flex;
+  align-items: left;
+}
+.forget_box_sifre button {
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+.forget_box p {
+  width: 100%;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}

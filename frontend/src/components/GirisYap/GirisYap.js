@@ -64,7 +64,7 @@ const GirisYap = () => {
             </p>
           </div>
         </div>
-        {error && <div className="error">{error}</div>}
+        {error && <div className={Style.error}>{error}</div>}
       </form>
     </div>
   );

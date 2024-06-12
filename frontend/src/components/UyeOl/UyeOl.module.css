@@ -116,6 +116,9 @@
 }
 
 .error {
-  font-size: 16px;
-  font-weight: 600;
+  width: 90%;
+  margin-top: 20px;
+  background: rgba(219, 13, 13, 0.5);
+  padding: 10px;
+  border-radius: 10px;
 }

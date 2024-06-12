@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Style from "./ResetPassword.module.css";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 function ResetPassword() {
   const [password, setPassword] = useState("");
@@ -30,19 +32,23 @@ function ResetPassword() {
   };
 
   return (
-    <div>
-      <h2>Şifre Sıfırlama</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="password"
-          placeholder="Yeni Şifre"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Şifreyi Sıfırla</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className={Style.forget}>
+      <div className={Style.forget_box}>
+        <form onSubmit={handleSubmit}>
+          <h2>Şifre Sıfırlama</h2>
+          <input
+            type="password"
+            placeholder="Yeni Şifre"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <div className={Style.forget_box_sifre}>
+            <button type="submit">Şifreyi Sıfırla</button>
+          </div>
+        </form>
+        {message && <p>{message}</p>}
+      </div>
     </div>
   );
 }

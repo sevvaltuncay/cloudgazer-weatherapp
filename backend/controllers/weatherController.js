@@ -10,7 +10,9 @@ exports.getWeather = async (req, res) => {
     const weathers = await Weathers.find({ user_id });
     res.status(200).json(weathers);
   } catch (error) {
-    res.status(400).json({ error: "Failed to fetch weather data" });
+    res
+      .status(400)
+      .json({ error: "Hava durumu bilgisi getirilirken hata oluştu!" });
   }
 };
 
@@ -18,12 +20,12 @@ exports.deleteWeather = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such weather" });
+    return res.status(404).json({ error: "Böyle bir hava durumu yok!" });
   }
 
   const weather = await Weathers.findOneAndDelete({ _id: id });
   if (!weather) {
-    return res.status(400).json({ error: "No such weather" });
+    return res.status(400).json({ error: "Böyle bir hava durumu yok!" });
   }
 
   res.status(200).json(weather);
@@ -33,7 +35,7 @@ exports.likeWeather = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such weather" });
+    return res.status(404).json({ error: "Böyle bir hava durumu yok!" });
   }
 
   try {
@@ -44,12 +46,12 @@ exports.likeWeather = async (req, res) => {
     );
 
     if (!weather) {
-      return res.status(400).json({ error: "No such weather" });
+      return res.status(400).json({ error: "Böyle bir hava durumu yok!" });
     }
 
     res.status(200).json(weather);
   } catch (error) {
-    res.status(500).json({ error: "Failed to like weather" });
+    res.status(500).json({ error: "Bir hata oluştu!" });
   }
 };
 
@@ -91,7 +93,7 @@ exports.createWeather = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Varolan şehirleri giriniz!" });
   }
 };
 
@@ -102,7 +104,7 @@ exports.updateWeather = async (req, res) => {
     const weather = await Weathers.findById(id);
 
     if (!weather) {
-      return res.status(404).json({ error: "No such weather" });
+      return res.status(404).json({ error: "Böyle bir hava durumu yok!" });
     }
 
     const city = weather.city;
@@ -134,7 +136,7 @@ exports.updateWeather = async (req, res) => {
       );
 
       if (!updatedWeatherData) {
-        return res.status(400).json({ error: "No such weather" });
+        return res.status(400).json({ error: "Böyle bir hava durumu yok!" });
       }
 
       console.log(`Weather data for ${city} updated successfully.`);
@@ -144,6 +146,8 @@ exports.updateWeather = async (req, res) => {
       res.status(400).json({ message: updateData.message });
     }
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res
+      .status(500)
+      .json({ message: "Hava durumu bilgisi getirilirken hata oluştu!" });
   }
 };
