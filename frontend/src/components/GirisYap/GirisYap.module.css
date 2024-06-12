@@ -116,3 +116,27 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+/* Mobil cihazlar için düzenlemeler */
+@media (max-width: 600px) {
+  .girisyap {
+    padding: 20px;
+  }
+  .girisyap_box {
+    width: 100%;
+  }
+  .girisyap_box h1 {
+    font-size: 28px;
+  }
+  .girisyap_box_email input,
+  .girisyap_box_sifre input {
+    padding: 15px 20px;
+  }
+  .girisyap_box_remember {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .girisyap_box_remember a {
+    margin-top: 10px;
+  }
+}
