@@ -44,16 +44,20 @@ const passUser = async function (req, res) {
     if (!user) {
       return res.status(400).json({ error: "Kullanıcı Bulunamadı!" });
     }
+
     const resetToken = createResetToken(user._id);
     const resetLink = `${process.env.CLIENT_URL}?token=${resetToken}`;
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        ciphers: "SSLv3",
       },
     });
 
@@ -69,6 +73,7 @@ const passUser = async function (req, res) {
       .status(200)
       .json({ message: "Şifre sıfırlama bağlantısı e-posta ile gönderildi." });
   } catch (error) {
+    console.error("E-posta gönderimi sırasında hata:", error); // Hata loglamayı ekleyin
     res.status(500).json({ error: "E-posta gönderilemedi." });
   }
 };
