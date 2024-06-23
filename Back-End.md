@@ -1,6 +1,7 @@
 # Back-End
 
-**Back-End Çatısı:** ExpressJS, NodeJS, REST API
+**Back-End Çatısı:** Rest API kullanıldı.
+Docker kullanılmadı.
 
 **VeriTabanı:** OpenWeather API, MongoDB
 

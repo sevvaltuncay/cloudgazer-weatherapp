@@ -6,6 +6,8 @@
 
 **Referans Uygulama:** https://www.accuweather.com/tr
 
+**Uygulama Adresi:** https://cloudgazer-weatherforecast.netlify.app
+
 **Grup Adı:** Cloudgazer
 
 **Proje Ekibi:** Şevval Tuncay
