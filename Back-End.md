@@ -1,9 +1,10 @@
 # Back-End
 
-**Back-End Çatısı:** Rest API kullanıldı.
-Docker kullanılmadı.
+**Back-End Çatısı:** ExpressJS
 
-**VeriTabanı:** OpenWeather API, MongoDB
+**VeriTabanı:** OpenWeather API, MongoDB,
+Rest API kullanıldı.
+Docker kullanılmadı.
 
 # Şevval Tuncay Back-End Çalışması:
 
